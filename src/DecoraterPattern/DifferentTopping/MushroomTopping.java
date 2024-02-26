@@ -4,16 +4,16 @@ import DecoraterPattern.BasePizza;
 import DecoraterPattern.ExtraTopping;
 
 public class MushroomTopping extends ExtraTopping {
-    BasePizza basepizza;
+
 
     // constructor injection
-    public MushroomTopping(BasePizza basepizza){
+    public MushroomTopping(BasePizza basePizza){
+        super(basePizza);
         System.out.println("Extra topping of Mushroom is added");
-        this.basepizza = basepizza;
     }
 
     @Override
     public int cost(){
-        return this.basepizza.cost()+20;
+        return basePizza.cost()+20;
     }
 }
