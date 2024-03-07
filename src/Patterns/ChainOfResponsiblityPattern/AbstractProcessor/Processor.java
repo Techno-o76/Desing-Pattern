@@ -10,15 +10,16 @@ public abstract class Processor {
     Processor nextProcessor;
     private static Processor nullProcessor = new NullProcessor();
 
+    public Processor (Processor loggerProcessor){
+        this.nextProcessor = loggerProcessor;
+    }
 
     // Have to create the empty constructor to allow storage of  objectes of its sub-class having empty constructor,
     // need more clearifiation on this.
     public Processor(){
 
     }
-    public Processor (Processor loggerProcessor){
-        this.nextProcessor = loggerProcessor;
-    }
+
 
     public void log(int logLevel, String message){
         if(nextProcessor!=null){
